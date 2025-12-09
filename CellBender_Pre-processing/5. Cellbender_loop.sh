@@ -16,10 +16,10 @@ for h5_file in "$INPUT_DIR"/*.h5; do
         output_file="$OUTPUT_DIR/${base_name}_cellbender.h5"
         
         echo "Running Cellbender, $basename -> ${basename}_cellbender.h5"
-        #cellbender remove-background \
-            #--cuda \
-            #--input "$h5_file" \
-            #--output "$output_file" 
+        cellbender remove-background \
+            --cuda \
+            --input "$h5_file" \
+            --output "$output_file" 
         echo "Cellbender analysis completed on $base_name, Ambient RNA removed."
     fi
 done
